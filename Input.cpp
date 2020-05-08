@@ -28,4 +28,12 @@ void Engine::input()
 			}
 		}
 	}
+
+	if (thomas.handle_input()) {
+
+	}
+
+	if (bob.handle_input()) {
+		
+	}
 }

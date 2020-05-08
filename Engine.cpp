@@ -1,6 +1,5 @@
 #include "Engine.hpp"
 
-
 Engine::Engine()
 {
 	// Get the screen resolution and create an SFML window and View
@@ -9,26 +8,26 @@ Engine::Engine()
 	resolution.y = sf::VideoMode::getDesktopMode().height;
 
 	window.create(sf::VideoMode(resolution.x, resolution.y),
-		"Thomas was late",
-		sf::Style::Fullscreen);
+								"Thomas was late",
+								sf::Style::Resize);
 
 	// Initialize the full screen view
 	main_view.setSize(resolution);
 	hud_view.reset(
-		sf::FloatRect(0, 0, resolution.x, resolution.y));
+			sf::FloatRect(0, 0, resolution.x, resolution.y));
 
 	// Inititialize the split-screen Views
 	left_view.setViewport(
-		sf::FloatRect(0.001f, 0.001f, 0.498f, 0.998f));
+			sf::FloatRect(0.001f, 0.001f, 0.498f, 0.998f));
 
 	right_view.setViewport(
-		sf::FloatRect(0.5f, 0.001f, 0.499f, 0.998f));
+			sf::FloatRect(0.5f, 0.001f, 0.499f, 0.998f));
 
 	bg_left_view.setViewport(
-		sf::FloatRect(0.001f, 0.001f, 0.498f, 0.998f));
+			sf::FloatRect(0.001f, 0.001f, 0.498f, 0.998f));
 
 	bg_right_view.setViewport(
-		sf::FloatRect(0.5f, 0.001f, 0.499f, 0.998f));
+			sf::FloatRect(0.5f, 0.001f, 0.499f, 0.998f));
 
 	// Can this graphics card use shaders?
 	if (!sf::Shader::isAvailable())
@@ -38,16 +37,15 @@ Engine::Engine()
 	}
 
 	background_texture = TextureHolder::get_texture(
-		"graphics/background.png");
+			"graphics/background.png");
 
 	// Associate the sprite with the texture
 	backgroud_sprite.setTexture(background_texture);
-
 }
 
 void Engine::run()
 {
-	// Timing 	
+	// Timing
 	sf::Clock clock;
 
 	while (window.isOpen())

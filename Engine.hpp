@@ -4,11 +4,16 @@
 
 #include <SFML/Graphics.hpp>
 #include "TextureHolder.hpp"
+#include "Thomas.hpp"
+#include "Bob.hpp"
+
 
 class Engine
 {
 private:
 	TextureHolder th;
+	Thomas thomas;
+	Bob bob;
 
 	const int TILE_SIZE = 50;
 	const int VERTS_IN_QUAD = 4;

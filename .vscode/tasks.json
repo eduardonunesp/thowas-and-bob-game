@@ -3,7 +3,6 @@
   "tasks": [
     {
       "label": "build",
-      "type": "shell",
       "command": "scons",
       "args": [
         "debug=1",
@@ -17,7 +16,6 @@
       "problemMatcher": "$msCompile"
     },
     {
-      "type": "shell",
       "label": "clang++ build active file",
       "command": "/usr/bin/clang++",
       "args": [

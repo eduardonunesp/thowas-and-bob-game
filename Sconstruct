@@ -2,12 +2,15 @@ env = Environment()
 debug = ARGUMENTS.get('debug', 0)
 
 files = [
-  "main.cpp",
+  "Bob.cpp",
   "Draw.cpp",
   "Engine.cpp",
   "Input.cpp",
+  "main.cpp",
+  "PlayableCharacter.cpp",
   "TextureHolder.cpp",
-  "Update.cpp"
+  "Thomas.cpp",
+  "Update.cpp",
 ]
 
 env.Append(LIBS = ['sfml-graphics', 'sfml-window', 'sfml-system'])
