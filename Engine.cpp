@@ -8,7 +8,7 @@ Engine::Engine()
 	resolution.y = sf::VideoMode::getDesktopMode().height;
 
 	window.create(sf::VideoMode(resolution.x, resolution.y),
-								"Thomas was late",
+								"Thomas And Bob",
 								sf::Style::Resize);
 
 	// Initialize the full screen view
