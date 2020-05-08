@@ -1,0 +1,20 @@
+env = Environment()
+debug = ARGUMENTS.get('debug', 0)
+
+files = [
+  "main.cpp",
+  "Draw.cpp",
+  "Engine.cpp",
+  "Input.cpp",
+  "TextureHolder.cpp",
+  "Update.cpp"
+]
+
+env.Append(LIBS = ['sfml-graphics', 'sfml-window', 'sfml-system'])
+env.Append(CCFLAGS = ['-std=c++11'])
+env.AppendUnique(FRAMEWORKS=Split('OPENGL'))
+
+if int(debug):
+    env.Append(CCFLAGS = '-g')
+
+env.Program('test', files)
