@@ -25,7 +25,7 @@ public:
 
 	sf::Vector2f get_start_position();
 
-	int **nextLevel(sf::VertexArray &vertex_array_level);
+	int **next_level(sf::VertexArray &vertex_array_level);
 
 	sf::Vector2i get_level_size();
 

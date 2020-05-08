@@ -6,17 +6,20 @@ files = [
   "Draw.cpp",
   "DetectCollisions.cpp",
   "Engine.cpp",
+  "HUD.cpp",
   "Input.cpp",
   "LevelManager.cpp",
   "LoadLevel.cpp",
   "main.cpp",
   "PlayableCharacter.cpp",
+  "PopulateEmitters.cpp",
+  "SoundManager.cpp",
   "TextureHolder.cpp",
   "Thomas.cpp",
   "Update.cpp",
 ]
 
-env.Append(LIBS = ['sfml-graphics', 'sfml-window', 'sfml-system'])
+env.Append(LIBS = ['sfml-audio', 'sfml-graphics', 'sfml-window', 'sfml-system'])
 env.Append(CCFLAGS = ['-std=c++11'])
 env.AppendUnique(FRAMEWORKS=Split('OPENGL'))
 

@@ -30,10 +30,10 @@ void Engine::input()
 	}
 
 	if (thomas.handle_input()) {
-
+		sound_manager.play_jump();
 	}
 
 	if (bob.handle_input()) {
-		
+		sound_manager.play_jump();
 	}
 }

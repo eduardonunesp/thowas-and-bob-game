@@ -37,5 +37,13 @@ void Engine::draw()
 	}
 
 	window.setView(hud_view);
+	window.draw(hud.get_level());
+	window.draw(hud.get_time());
+
+	if (!playing) {
+		window.draw(hud.get_message());
+	}
+
+	window.setView(hud_view);
 	window.display();
 }

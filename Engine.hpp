@@ -7,6 +7,8 @@
 #include "Thomas.hpp"
 #include "Bob.hpp"
 #include "LevelManager.hpp"
+#include "SoundManager.hpp"
+#include "HUD.hpp"
 
 class Engine
 {
@@ -15,6 +17,11 @@ private:
 	Thomas thomas;
 	Bob bob;
 	LevelManager level_manager;
+	SoundManager sound_manager;
+	Hud hud;
+
+	int frames_since_last_hud_update = 0;
+	int target_fps_hud_update = 500;
 
 	const int TILE_SIZE = 50;
 	const int VERTS_IN_QUAD = 4;
@@ -52,6 +59,12 @@ private:
 	void draw();
 	void load_level();
 	bool detect_collisions(PlayableCharacter& character);
+	void populate_emitters(
+		std::vector <sf::Vector2f>& sound_emitters, 
+		int** array_level
+	);
+
+	std::vector <sf::Vector2f> fire_emitters;
 
 public:
 	Engine();

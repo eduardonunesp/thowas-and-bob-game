@@ -13,7 +13,9 @@ void Engine::load_level()
 
 	// Load the next 2d array with the map for the level
 	// And repopulate the vertex array as well
-	array_level = level_manager.nextLevel(level);
+	array_level = level_manager.next_level(level);
+
+	populate_emitters(fire_emitters, array_level);
 
 	// How long is this new time limit
 	time_remaining = level_manager.get_time_limit();

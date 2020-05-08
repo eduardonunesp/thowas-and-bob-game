@@ -8,7 +8,7 @@
 #include "LevelManager.hpp"
 
 
-int** LevelManager::nextLevel(sf::VertexArray& vertex_array_level)
+int** LevelManager::next_level(sf::VertexArray& vertex_array_level)
 {
 	level_size.x = 0;
 	level_size.y = 0;
