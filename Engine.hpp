@@ -6,7 +6,7 @@
 #include "TextureHolder.hpp"
 #include "Thomas.hpp"
 #include "Bob.hpp"
-
+#include "LevelManager.hpp"
 
 class Engine
 {
@@ -14,6 +14,7 @@ private:
 	TextureHolder th;
 	Thomas thomas;
 	Bob bob;
+	LevelManager level_manager;
 
 	const int TILE_SIZE = 50;
 	const int VERTS_IN_QUAD = 4;
@@ -42,9 +43,15 @@ private:
 	sf::Time game_time_total;
 	bool new_level_required = true;
 
+	sf::VertexArray level;
+	int** array_level = NULL;
+	sf::Texture texture_tiles;
+
 	void input();
 	void update(float dt_seconds);
 	void draw();
+	void load_level();
+	bool detect_collisions(PlayableCharacter& character);
 
 public:
 	Engine();

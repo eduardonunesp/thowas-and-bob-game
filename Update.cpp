@@ -6,17 +6,19 @@ void Engine::update(float dt_seconds)
 {
 	if (new_level_required)
 	{
-		thomas.spawn(sf::Vector2f(0, 0), GRAVITY);
-		bob.spawn(sf::Vector2f(100, 0), GRAVITY);
-
-		time_remaining = 10;
-		new_level_required = false;
+		load_level();
 	}
 
 	if (playing)
 	{
 		thomas.update(dt_seconds);
 		bob.update(dt_seconds);
+
+		if (detect_collisions(thomas) && detect_collisions(bob)) {
+			new_level_required = true;
+		} else {
+			detect_collisions(bob);
+		}
 
 		time_remaining -= dt_seconds;
 		if (time_remaining <= 0)

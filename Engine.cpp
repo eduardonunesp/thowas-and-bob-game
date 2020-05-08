@@ -41,6 +41,8 @@ Engine::Engine()
 
 	// Associate the sprite with the texture
 	backgroud_sprite.setTexture(background_texture);
+
+	texture_tiles = TextureHolder::get_texture("graphics/tiles_sheet.png");
 }
 
 void Engine::run()

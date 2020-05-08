@@ -4,8 +4,11 @@ debug = ARGUMENTS.get('debug', 0)
 files = [
   "Bob.cpp",
   "Draw.cpp",
+  "DetectCollisions.cpp",
   "Engine.cpp",
   "Input.cpp",
+  "LevelManager.cpp",
+  "LoadLevel.cpp",
   "main.cpp",
   "PlayableCharacter.cpp",
   "TextureHolder.cpp",
