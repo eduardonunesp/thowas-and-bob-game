@@ -4,7 +4,6 @@
 
 Bob::Bob()
 {
-	// Associate a texture with the sprite
 	sprite = sf::Sprite(TextureHolder::get_texture(
 			"graphics/bob.png"));
 
@@ -17,9 +16,6 @@ bool Bob::handle_input()
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 	{
-
-		// Start a jump if not already jumping
-		// but only if standing on a block (not falling)
 		if (!is_jumping && !is_falling)
 		{
 			is_jumping = true;

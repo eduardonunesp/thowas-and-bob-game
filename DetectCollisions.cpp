@@ -93,15 +93,12 @@ bool Engine::detect_collisions(PlayableCharacter& character)
 				}
 			}
 			
-			// More collision detection here once we have learned about particle effects
 			if (!particle_system.running()) {
 				if (array_level[y][x] == 2 || array_level[y][x] == 3)
 				{
 					if (character.get_feet().intersects(block))
 					{
-						// position and start the particle system
 						particle_system.emit_particles(character.get_center());
-
 					}
 				}
 			}
@@ -112,9 +109,7 @@ bool Engine::detect_collisions(PlayableCharacter& character)
 				// Character has reached the goal
 				reached_goal = true;
 			}
-
 		}
-
 	}
 
 	// All done, return, wheteher or not a new level might be required
