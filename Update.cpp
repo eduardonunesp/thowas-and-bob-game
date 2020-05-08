@@ -89,4 +89,8 @@ void Engine::update(float dt_seconds)
 
 		frames_since_last_hud_update = 0;
 	}
+
+	if (particle_system.running()) {
+		particle_system.update(dt_seconds);
+	}
 }

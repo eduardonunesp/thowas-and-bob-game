@@ -29,6 +29,12 @@ Engine::Engine()
 	bg_right_view.setViewport(
 			sf::FloatRect(0.5f, 0.001f, 0.499f, 0.998f));
 
+	if (!sf::Shader::isAvailable()) {
+		window.close();
+	} else {
+		ripple_shader.loadFromFile("shaders/vertShader.vert", "shaders/rippleShader.frag");
+	}
+
 	// Can this graphics card use shaders?
 	if (!sf::Shader::isAvailable())
 	{
@@ -43,6 +49,8 @@ Engine::Engine()
 	backgroud_sprite.setTexture(background_texture);
 
 	texture_tiles = TextureHolder::get_texture("graphics/tiles_sheet.png");
+
+	particle_system.init(1000);
 }
 
 void Engine::run()

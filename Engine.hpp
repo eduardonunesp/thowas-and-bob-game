@@ -9,11 +9,13 @@
 #include "LevelManager.hpp"
 #include "SoundManager.hpp"
 #include "HUD.hpp"
+#include "ParticleSystem.hpp"
 
 class Engine
 {
 private:
 	TextureHolder th;
+	ParticleSystem particle_system;
 	Thomas thomas;
 	Bob bob;
 	LevelManager level_manager;
@@ -42,6 +44,8 @@ private:
 
 	sf::Sprite backgroud_sprite;
 	sf::Texture background_texture;
+
+	sf::Shader ripple_shader;
 
 	bool playing = false;
 	bool character_1 = true;

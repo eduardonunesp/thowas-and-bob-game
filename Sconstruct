@@ -11,6 +11,8 @@ files = [
   "LevelManager.cpp",
   "LoadLevel.cpp",
   "main.cpp",
+  "Particle.cpp",
+  "ParticleSystem.cpp",
   "PlayableCharacter.cpp",
   "PopulateEmitters.cpp",
   "SoundManager.cpp",
